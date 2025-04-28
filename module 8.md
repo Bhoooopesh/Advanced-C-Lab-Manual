@@ -16,15 +16,58 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
 
+int main() {
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    switch(n) {
+        case 5:
+            printf("seventy one\n");
+            break;
+        case 6:
+            printf("seventy two\n");
+            break;
+        case 7:
+            printf("seventy three\n");
+            break;
+        case 8:
+            printf("seventy four\n");
+            break;
+        case 9:
+            printf("seventy five\n");
+            break;
+        case 10:
+            printf("seventy six\n");
+            break;
+        case 11:
+            printf("seventy seven\n");
+            break;
+        case 12:
+            printf("seventy eight\n");
+            break;
+        case 13:
+            printf("seventy nine\n");
+            break;
+        default:
+            printf("Greater than 13\n");
+    }
+
+    return 0;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 13 58 24_2aecb6ee](https://github.com/user-attachments/assets/5ec71a83-a3ab-40dc-812d-99b301564018)
+
 
 
 
@@ -47,7 +90,29 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main() {
+    char a[50];
+    int h = 0, c, i;
+    
+    printf("Enter a string of digits: ");
+    scanf("%s", a);
+    
+    while(h < 10) {
+        c = 0;
+        for(i = 0; a[i] != '\0'; i++) {
+            if(a[i] - '0' == h)
+                c++;
+        }
+        printf("%d ", c);
+        h++;
+    }
+    
+    return 0;
+}
+```
 
 
 
@@ -55,7 +120,8 @@ Program:
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 13 59 40_f201d3a6](https://github.com/user-attachments/assets/2312d671-1a85-4ad3-97dc-e9467170821a)
+
 
 
 
@@ -84,7 +150,73 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void swap(char *x, char *y) {
+    char temp[100];
+    strcpy(temp, x);
+    strcpy(x, y);
+    strcpy(y, temp);
+}
+
+void sort(char **s, int n) {
+    int i, j;
+    for (i = 0; i < n - 1; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (strcmp(s[i], s[j]) > 0) {
+                swap(s[i], s[j]);
+            }
+        }
+    }
+}
+
+void permute(char **s, int l, int r) {
+    int i;
+    if (l == r) {
+        for (i = 0; i <= r; i++) {
+            printf("%s ", s[i]);
+        }
+        printf("\n");
+    } else {
+        for (i = l; i <= r; i++) {
+            swap(s[l], s[i]);
+            permute(s, l + 1, r);
+            swap(s[l], s[i]);
+        }
+    }
+}
+
+int main() {
+    int n, i;
+    char **s;
+
+    printf("Enter number of strings: ");
+    scanf("%d", &n);
+
+    s = (char **)malloc(n * sizeof(char *));
+    for (i = 0; i < n; i++) {
+        s[i] = (char *)malloc(100 * sizeof(char));
+    }
+
+    printf("Enter the strings:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%s", s[i]);
+    }
+
+    sort(s, n);
+    permute(s, 0, n - 1);
+
+    for (i = 0; i < n; i++) {
+        free(s[i]);
+    }
+    free(s);
+
+    return 0;
+}
+```
 
 
 
@@ -92,7 +224,8 @@ Program:
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 14 00 46_3f3989d6](https://github.com/user-attachments/assets/7e8daad2-29c6-47d5-b445-1917fe86f744)
+
 
 
 
@@ -117,7 +250,31 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main() {
+    int n, i, j, min, len;
+    
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    
+    len = n * 2 - 1;
+    
+    for(i = 0; i < len; i++) {
+        for(j = 0; j < len; j++) {
+            min = i < j ? i : j;
+            min = min < len - i ? min : len - i - 1;
+            min = min < len - j - 1 ? min : len - j - 1;
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
+
 
 
 
@@ -125,7 +282,8 @@ Program:
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 14 02 58_60c1b549](https://github.com/user-attachments/assets/96e0b99b-9388-49a4-8b4f-a375ed008935)
+
 
 
 
@@ -156,7 +314,23 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int square() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    return num * num;
+}
+
+int main() {
+    int result;
+    result = square();
+    printf("Square of the number = %d\n", result);
+    return 0;
+}
+```
 
 
 
@@ -164,7 +338,8 @@ Program:
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 14 03 41_409f5f18](https://github.com/user-attachments/assets/0d6fae85-2c87-4cd8-9b3d-51cae002e6b3)
+
 
 
 
