@@ -13,11 +13,23 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+float stack[100];
+int top; 
+void display(){
+    
+    if(top == -1)
+    printf("Stack is empty!\n");
+    
+    for(int i=top; i>=0; i--){
+    printf("%.1f ",stack[i]);
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 20 12 47_527dcfae](https://github.com/user-attachments/assets/2124ac37-82ca-4f4a-bc8a-9b058ac366bb)
 
 
 
@@ -36,11 +48,26 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int size=3,top=0,stack[100];
+void push (int data)
+{
+    if (top == size- 1 )
+    {
+    printf("stack is full\n");
+    }
+    
+    else
+    {
+        top ++;
+        stack[top] = data;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 20 13 17_71570f5f](https://github.com/user-attachments/assets/18388769-e885-49ec-9fb9-384ff82e00dd)
 
 
 
@@ -62,11 +89,26 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+float queue[50];
+int rear,front;
+void display()
+{
+    if(front == -1 || front>rear)
+    printf("No elements to display\n");
+    else
+    {
+        for(int i=front;i<=rear;i++)
+        {
+            printf("%.1f ", queue[i]);
+        }
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 20 13 54_92cf7955](https://github.com/user-attachments/assets/9d9bc7b6-04c8-47d6-9ae2-7e4a9e31ff7d)
 
 
 Result:
@@ -86,11 +128,25 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+int queue[50];
+int front,rear,size=10;
+
+void enqueue(int data){
+    
+    if(rear<size){
+        if(front == -1){
+            front = 0;
+        }
+        rear++;
+        queue[rear] = data;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 20 16 10_aa9e5931](https://github.com/user-attachments/assets/407a87ce-ab37-4893-a5ca-bc21c3e8f395)
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -121,11 +177,24 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
+```
+int front, rear;
+void dequeue()
+{
+    if(front == -1||front>rear){
+        printf("No elements to display\n");
+        return;
+    }
+    else
+    {
+        front=front+1;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+![WhatsApp Image 2025-04-28 at 20 16 34_dd30b103](https://github.com/user-attachments/assets/522edce0-d4ce-463c-8ba7-3ee227733cf8)
 
 
 Result:
